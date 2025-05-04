@@ -1,7 +1,7 @@
 datawarehouse:
-  target: prod
+  target: dev
   outputs:
-    prod:
+    dev:
       type: postgres
       host: "{{ env_var('DB_HOST') }}"
       user: "{{ env_var('DB_USER') }}"
@@ -12,4 +12,4 @@ datawarehouse:
       threads: "{{ env_var('DB_THREADS') | int }}"
       type: "{{ env_var('DB_TYPE') }}"
       keepalives_idle: 0
-  target: prod
+  target: dev

@@ -27,7 +27,7 @@ commodities = ['CL=F', 'GC=F', 'SI=F']
 def buscar_dados_commodities(simbolo, periodo='5d', intervalo='1d'):
     ticker = yf.Ticker(simbolo)
     dados = ticker.history(period=periodo, interval=intervalo)[['Close']]
-    dados[simbolo] = simbolo
+    dados['simbolo'] = simbolo
     return dados
 
 # Função que irá consolidar todos os commodities
